@@ -31,4 +31,14 @@ class User extends Model implements AuthenticatableContract, CanResetPasswordCon
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	/**
+	* Get the posts associated with current user
+	* @return \Illuminate\Database\Eloquent\Relations\Belongs
+	*/
+	public function posts()
+    {
+        return $this->hasMany('App\Post');
+    }
+
+
 }

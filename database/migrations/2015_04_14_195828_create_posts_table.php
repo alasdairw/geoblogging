@@ -19,11 +19,12 @@ class CreatePostsTable extends Migration {
 			$table->foreign('user_id')->references('id')->on('users');
 			$table->integer('post_type_id')->unsigned()->index();
 			$table->foreign('post_type_id')->references('id')->on('post_types');
-
 			$table->string('title');
 			$table->text('body');
-			$table->string('status')->index();
-			$table->timestamp('published_at')->index();
+			$table->double('lat',16,9);
+			$table->double('long',16,9);
+			$table->string('status')->default('Draft')->index();
+			$table->timestamp('published_at')->nullable()->index();
 			$table->softDeletes();
 			$table->timestamps();
 		});
