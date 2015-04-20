@@ -15,9 +15,14 @@ Route::get('/', 'WelcomeController@index');
 
 Route::get('home', 'HomeController@index');
 
-Route::group(['prefix' => 'api/v0','middleware' => 'auth'],function() {
+Route::group(['prefix' => 'api/v0'/*,'middleware' => 'auth'*/],function() {
+    Route::resource('posts','PostsAPIController');
+});
+
+Route::group(['prefix' => 'app','middleware' => 'auth'],function() {
     Route::resource('posts','PostsController');
 });
+
 
 
 Route::controllers([

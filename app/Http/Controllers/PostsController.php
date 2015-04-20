@@ -2,26 +2,27 @@
 
 use App\Http\Requests;
 use App\Http\Controllers\Controller;
-
-use App\Posts;
-use App\PostRequest;
-
+use App\Post;
 use Illuminate\Http\Request;
 
 class PostsController extends Controller {
 
 
-	/**
-	 * Create a new faction
-	 * @param FactionRequest $request
-	 * @return Faction
-	 */
-	private function createPost(PostRequest $request)
+	private function generateMap($lat='51.5286416',$long='-0.1015987')
 	{
-		$post = Post::create($request->all());
-		return $post;
-	}
+		$config['center'] = $lat.','.$long;
+		$config['zoom'] = '14';
+		$googlemap = \Gmaps::initialize($config);
+		//dd($googlemap);
 
+		$marker = array();
+		$marker['position'] = $lat.','.$long;
+		$marker['draggable'] = true;
+		$marker['ondragend'] = 'updateDatabase(event.latLng.lat(), event.latLng.lng());';
+		\Gmaps::add_marker($marker);
+		$map = \Gmaps::create_map();
+		return $map;
+	}
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -30,7 +31,8 @@ class PostsController extends Controller {
 	public function index()
 	{
 		$posts = Post::all();
-		return $posts;
+		$map = $this->generateMap();
+		return view('posts.index',compact('posts','map'));
 	}
 
 	/**
@@ -48,9 +50,9 @@ class PostsController extends Controller {
 	 *
 	 * @return Response
 	 */
-	public function store(PostRequest $request)
+	public function store()
 	{
-		return $this->createPost($request);
+		//
 	}
 
 	/**
@@ -59,9 +61,9 @@ class PostsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function show(Post $post)
+	public function show($id)
 	{
-		return $post;
+		//
 	}
 
 	/**
@@ -81,10 +83,9 @@ class PostsController extends Controller {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function update(Post $post, PostRequest $request)
+	public function update($id)
 	{
-		$post->update($request->all());
-		return $post;
+		//
 	}
 
 	/**

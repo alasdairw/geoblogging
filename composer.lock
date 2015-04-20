@@ -4,8 +4,56 @@
         "Read more about it at http://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "24c3946acc997e3f3eca7fc5c99585b2",
+    "hash": "f77b7ab6fc35df7f1351a582d556d6f7",
     "packages": [
+        {
+            "name": "appitventures/phpgmaps",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/appitventures/Phpgmaps.git",
+                "reference": "f2f0d1f38803898dd38b08bbeebfa31ef4e9aaf1"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/appitventures/Phpgmaps/zipball/f2f0d1f38803898dd38b08bbeebfa31ef4e9aaf1",
+                "reference": "f2f0d1f38803898dd38b08bbeebfa31ef4e9aaf1",
+                "shasum": ""
+            },
+            "require": {
+                "laravel/framework": "5.*",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-laravel4": "1.0-dev",
+                    "dev-develop": "2.0-dev",
+                    "dev-master": "2.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Appitventures\\Phpgmaps\\": "src/Appitventures/Phpgmaps/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "authors": [
+                {
+                    "name": "Michael Hopkins",
+                    "email": "michael@appitventures.com",
+                    "role": "developer"
+                }
+            ],
+            "description": "A codeigniter library that has been modified a bit so that it's laravel friendly",
+            "keywords": [
+                "biostall",
+                "googlemaps",
+                "laravel",
+                "phpgmaps"
+            ],
+            "time": "2015-02-15 21:39:31"
+        },
         {
             "name": "classpreloader/classpreloader",
             "version": "1.2.0",
@@ -221,6 +269,52 @@
                 "string"
             ],
             "time": "2014-12-20 21:24:13"
+        },
+        {
+            "name": "illuminate/html",
+            "version": "v5.0.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/illuminate/html.git",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/illuminate/html/zipball/3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "reference": "3d1009bb8e0f25720c914af5c1f4015dd373c9ef",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "~5.0",
+                "illuminate/session": "~5.0",
+                "illuminate/support": "~5.0",
+                "php": ">=5.4.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "5.0-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Illuminate\\Html\\": ""
+                },
+                "files": [
+                    "helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Taylor Otwell",
+                    "email": "taylorotwell@gmail.com"
+                }
+            ],
+            "time": "2015-01-01 16:31:18"
         },
         {
             "name": "ircmaxell/password-compat",
@@ -2795,7 +2889,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "appitventures/phpgmaps": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],

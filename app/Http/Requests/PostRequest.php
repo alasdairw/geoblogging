@@ -22,8 +22,8 @@ class PostRequest extends Request {
 	public function rules()
 	{
 		return [
-			'title' => 'required|min=2',
-			'body' => 'required|min=2',
+			'title' => 'required|min:2',
+			'body' => 'required|min:2',
 			'lat' => 'required',
 			'long' => 'required'
 		];

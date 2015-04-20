@@ -8,7 +8,9 @@ class Post extends Model {
                 'title',
                 'post_type_id',
                 'user_id',
-                'body'
+                'body',
+                'lat',
+                'long',
     ];
 
     protected $dates = [

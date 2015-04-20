@@ -2,6 +2,7 @@
 
 use Illuminate\Database\Seeder;
 use Illuminate\Database\Eloquent\Model;
+use Laracasts\TestDummy\Factory as TestDummy;
 
 class DatabaseSeeder extends Seeder {
 
@@ -14,7 +15,10 @@ class DatabaseSeeder extends Seeder {
 	{
 		Model::unguard();
 
-		// $this->call('UserTableSeeder');
+		$this->call('UsersTableSeeder');
+        $this->command->info('User table seeded!');
+        $this->call('PostTypesTableSeeder');
+        $this->command->info('Post Types table seeded!');
 	}
 
 }
