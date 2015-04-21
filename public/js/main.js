@@ -1,13 +1,26 @@
-var myApp = angular.module('PostsApp',[], function($interpolateProvider) {
+
+//angular.module('myApplicationModule', ['uiGmapgoogle-maps']);
+
+var myApp = angular.module('PostsApp',['uiGmapgoogle-maps'], function($interpolateProvider) {
     $interpolateProvider.startSymbol('<%');
     $interpolateProvider.endSymbol('%>');
 });
 
+myApp.config(function(uiGmapGoogleMapApiProvider) {
+    uiGmapGoogleMapApiProvider.configure({
+        //    key: 'your api key',
+        v: '3.17',
+        libraries: 'weather,geometry,visualization'
+    });
+})
 
-myApp.controller('PostController', function($scope, $http) {
+myApp.controller('PostController', function($scope, $http,uiGmapGoogleMapApi) {
 
     $scope.posts = []
     $scope.loading = false;
+    uiGmapGoogleMapApi.then(function(maps) {
+        $scope.map = { center: { latitude: 53, longitude: 1 }, zoom: 8 };
+    });
 
     $scope.init = function() {
         $scope.loading = true;

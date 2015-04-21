@@ -52,13 +52,15 @@
                 {!! Form::select('post_type_id',\App\PostType::lists('name','id'),null,['class'=>'form-control','ng-model'=>"newPostType"])!!}
             </div>
             <div class="form-group">
-                {!! $map['html'] !!}
+                <style> .angular-google-map-container { height: 400px; } </style>
+                <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+
+
                 {!! Form::hidden('lat',null,['id'=>'lat','ng-model'=>"newLatitude"]) !!}
                 {!! Form::hidden('long',null,['id'=>'long','ng-model'=>"newLongitude"]) !!}
             </div>
         <button type="submit">Add Post</button>
     </form>
-<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
 <script src="/js/main.js"></script>
 
 
@@ -67,7 +69,6 @@
   </div><!-- /.box-body -->
 </div>
 @section('extra-js')
-    {!! $map['js'] !!}
     <script type="text/javascript">
         function updateDatabase(newLat, newLng)
         {

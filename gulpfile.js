@@ -12,5 +12,7 @@ var elixir = require('laravel-elixir');
  */
 
 elixir(function(mix) {
-    mix.less('app.less');
+    mix.scripts('angular/angular.js','public/vendor/js/angular.js','bower_components/');
+    mix.scripts('angular-google-maps/dist/angular-google-maps.min.js','public/vendor/js/angular-google-maps.js','bower_components/');
+    mix.scripts('lodash/dist/lodash.min.js','public/vendor/js/lodash.js','bower_components/');
 });
