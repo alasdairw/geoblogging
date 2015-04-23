@@ -53,7 +53,10 @@
             </div>
             <div class="form-group">
                 <style> .angular-google-map-container { height: 400px; } </style>
-                <ui-gmap-google-map center='map.center' zoom='map.zoom'></ui-gmap-google-map>
+                <ui-gmap-google-map center='map.center' zoom='map.zoom'>
+                    <ui-gmap-marker coords="marker.coords" options="marker.options" events="marker.events" idkey="marker.id">
+                    </ui-gmap-marker>
+                </ui-gmap-google-map>
 
 
                 {!! Form::hidden('lat',null,['id'=>'lat','ng-model'=>"newLatitude"]) !!}
