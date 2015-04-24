@@ -39,6 +39,7 @@
         <script src="{{asset('/vendor/js/angular.js')}}" type="text/javascript"></script>
         <script src="{{asset('/vendor/js/angular-google-maps.js')}}" type="text/javascript"></script>
         <script src="{{asset('/vendor/js/lodash.js')}}" type="text/javascript"></script>
+        <script src="{{asset('/vendor/js/ngGeolocation.js')}}" type="text/javascript"></script>
 
 
     </head>
