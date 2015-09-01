@@ -11,7 +11,7 @@ class UsersTableSeeder extends Seeder {
     public function run()
     {
         // TestDummy::times(20)->create('App\Post');
-        User::create(['name'=>'Alasdair Watson','email'=>'alasdair@alasdair.biz','password'=>bcrypt('inhifkub')]);
+        User::create(['name'=>'Alasdair Watson','email'=>'alasdair@alasdair.biz','password'=>bcrypt('1234')]);
 
     }
 
